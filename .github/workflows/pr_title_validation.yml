@@ -1,4 +1,4 @@
-name: PR Title Validation
+name: Validate PR Title
 on:
   pull_request:
     types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
@@ -8,11 +8,12 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-        with:
+        with: 
           persist-credentials: false
 
       - name: Setup node
@@ -20,7 +21,7 @@ jobs:
         with:
           node-version: '10.x'
 
-      - name: PR Title Validation
+      - name: Validate PR Title
         run: |
           node ./scripts/pr_title_validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
         env:
