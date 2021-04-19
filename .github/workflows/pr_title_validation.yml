@@ -6,6 +6,7 @@ on:
       - staging
       - '*release*'
       - '*dev*'
+      - '*Dev*'
 
 jobs:
   build:
