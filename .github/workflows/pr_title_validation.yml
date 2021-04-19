@@ -23,6 +23,6 @@ jobs:
 
       - name: Validate PR Title
         run: |
-          node ./scripts/pr-title-validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
+          node ./scripts/pr_title_validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
         env:
           PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
