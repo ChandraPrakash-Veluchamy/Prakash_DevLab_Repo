@@ -18,6 +18,6 @@ Please describe the changes so that the reviewer has enough details
 
   *Why is this change necessary?*
 
-  *How does it address the issue?*
+  *How will this address the issue?*
 
   *Any side effects or dependencies?*
