@@ -1,0 +1,29 @@
+name: Validate PR Title
+on:
+  pull_request:
+    types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
+    branches:
+      - staging
+      - '*release*'
+      - '*dev*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Validate PR Title
+        run: |
+          node ./scripts/pr_title_validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
+        env:
+          PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
