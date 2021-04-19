@@ -8,7 +8,7 @@ let PRValidator = {
   init() {
     const title = process.argv.slice(2)[0].replace('--prTitle=', '');
 
-    console.log(`The git PR title is ${title}`);
+    console.log(`Extracted PR title is ${title}`);
 
     return validator(title);
   }
