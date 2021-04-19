@@ -1,8 +1,8 @@
 name: Validate PR Title
 on:
   pull_request:
-    types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
     branches:
+      - master
       - staging
       - dev_branch
       - '*release*'
@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
