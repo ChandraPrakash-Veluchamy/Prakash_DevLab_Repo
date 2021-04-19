@@ -2,6 +2,7 @@
 /* eslint-env node */
 'use strict';
 
+// Creating an object for the validator module
 const validator = require('./validator');
 
 let PRValidator = {
