@@ -4,8 +4,10 @@ on:
     types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
     branches:
       - staging
+      - dev_branch
       - '*release*'
       - '*dev*'
+      - '*Dev*'
 
 jobs:
   build:
