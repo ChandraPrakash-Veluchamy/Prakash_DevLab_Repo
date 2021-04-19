@@ -1,8 +1,8 @@
-name: Validate PR Title
+name: PR Title Validation
 on:
   pull_request:
+    types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
     branches:
-      - master
       - staging
       - dev_branch
       - '*release*'
@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '10.x'
 
-      - name: Validate PR Title
+      - name: PR Title Validation
         run: |
           node ./scripts/pr_title_validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
         env:
