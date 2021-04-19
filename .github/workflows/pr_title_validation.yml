@@ -7,7 +7,6 @@ on:
       - dev_branch
       - '*release*'
       - '*dev*'
-      - '*Dev*'
 
 jobs:
   build:
