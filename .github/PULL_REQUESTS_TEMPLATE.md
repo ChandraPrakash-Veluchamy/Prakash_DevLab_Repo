@@ -21,5 +21,3 @@ Please describe the changes so that the reviewer has enough details
   *How does it address the issue?*
 
   *Any side effects or dependencies?*
-
-  *Test*
