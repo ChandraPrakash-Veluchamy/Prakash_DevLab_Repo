@@ -32,6 +32,6 @@ jobs:
       - name: View PR author
         run: echo "This PR is opened by ${{github.event.pull_request.user.login}}"
       - name: View PR Object
-        run: echo "Pull request object ${{github.event.pull_request}}"
+        run: echo "Pull request object ${{github.event.label.name}}"
       - name: check PR label
-        run: echo "PR label ${{github.event.pull_request.labels.*.name}}"
+        run: echo "PR label ${{github.event.pull_request.labels.*.name[0]}}"
