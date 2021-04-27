@@ -29,3 +29,7 @@ jobs:
           node ./scripts/pr_title_validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
         env:
           PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
+      - name: View PR author
+        run: echo "This PR is opened by ${{github.event.pull_request.user.login}}"
+      - name: View PR label
+        run: echo "Pull request object ${{github.event.pull_request.label}}"
