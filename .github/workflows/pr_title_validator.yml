@@ -34,4 +34,4 @@ jobs:
       - name: View PR Object
         run: echo "Pull request object ${{github.event.pull_request}}"
       - name: check PR label
-        run: echo "PR label ${{github.event.label.name}}"
+        run: echo "PR label ${{github.event.pull_request.labels.*.name}}"
