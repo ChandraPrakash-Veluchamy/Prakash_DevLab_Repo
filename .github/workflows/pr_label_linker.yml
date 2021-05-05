@@ -1,0 +1,19 @@
+name: PR_Label_decider
+
+on:
+  pull_request:
+    types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
+    branches: [ master, '*dev*' ]
+  
+  jobs:
+    labeller:
+      runs-on: ubuntu-latest
+
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: TimonVS/pr-labeler-action@v3
+          with:
+            configuration-path: scripts/pr_tag_validator/pr-labeler.yml 
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
