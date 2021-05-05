@@ -3,8 +3,8 @@
 
 let REGEX_STRINGS = {
   ISSUE: {
-    REGEX: 'FT-[0-9]+:\\s',
-    helpString: 'FT-1234: a nice bug',
+    REGEX: 'FT-[0-9]+([\\s]?[:-]\\s?)?',
+    helpString: 'FT-1234: A nice task title',
     IGNORE: 'RELEASE: '
   }
 };
