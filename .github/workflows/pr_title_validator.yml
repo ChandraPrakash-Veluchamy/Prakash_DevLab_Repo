@@ -5,6 +5,7 @@ name: PR Title Validation
 # Controls when the action will run. 
 on:
   pull_request:
+    types: [assigned, unassigned, labeled, unlabeled, opened, edited, reopened, synchronize, ready_for_review, review_requested]
     branches: [ master, '*dev*' ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -29,3 +30,9 @@ jobs:
           node ./scripts/pr_title_validator/index.js --prTitle="${PULL_REQUEST_TITLE}"
         env:
           PULL_REQUEST_TITLE: ${{ github.event.pull_request.title }}
+      - name: View PR author
+        run: echo "This PR is opened by ${{github.event.pull_request.user.login}}"
+      - name: View PR Object
+        run: echo "Pull request object ${{github.event.label.name}}"
+      - name: check PR label
+        run: echo "PR label ${{join(github.event.issue.labels.*.name, ', ')}}"
