@@ -11,7 +11,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # PR labeler action to add label as per the branch.
       - uses: TimonVS/pr-labeler-action@v3
         with:
           configuration-path: scripts/pr_tag_validator/pr-labeler.yml 
