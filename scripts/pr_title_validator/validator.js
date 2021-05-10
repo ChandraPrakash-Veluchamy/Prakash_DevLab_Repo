@@ -8,7 +8,7 @@ module.exports = function(title) {
   try {
     const ISSUE_REGEX = new RegExp(CONFIGS.ISSUE.REGEX);
 
-    if (!ISSUE_REGEX.test(title) && !title.startsWith(CONFIGS.ISSUE.IGNORE)) {
+    if (!ISSUE_REGEX.test(title) && !title.toUpperCase().startsWith(CONFIGS.ISSUE.IGNORE)) {
       throw new Error(`Issue ID is not mentioned in the PR title. Ex: "${CONFIGS.ISSUE.helpString}"`);
     }
   } catch (e) {
